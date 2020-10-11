@@ -1,0 +1,66 @@
+@import 'base-styles';
+
+.alert {
+  background-color: $color-primary-lighter;
+  border: 1px solid $color-scale-base-70;
+  border-radius: 4px;
+  padding: $spacing-s;
+  transition: 0.75s ease;
+
+  &__list > li {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-family: $font-default-bold;
+    font-weight: 600;
+    color: $color-scale-base-5;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__message {
+    font-size: 12.5px;
+    font-weight: 400;
+    font-family: $font-default-regular;
+    color: $color-scale-base-10;
+    padding: 2px 0;
+  }
+
+  &--success {
+    background-color: $color-alert-success;
+    border-color: $color-alert-success-darker;
+
+    &:hover {
+      background-color: $color-alert-success-lighter;
+    }
+  }
+
+  &--info {
+    background-color: $color-alert-info;
+    border-color: $color-alert-info-darker;
+
+    &:hover {
+      background-color: $color-alert-info-lighter;
+    }
+  }
+
+  &--warning {
+    background-color: $color-alert-warning;
+    border-color: $color-alert-warning-darker;
+
+    &:hover {
+      background-color: $color-alert-warning-lighter;
+    }
+  }
+
+  &--danger {
+    background-color: $color-alert-danger;
+    border-color: $color-alert-danger-darker;
+
+    &:hover {
+      background-color: $color-alert-danger-lighter;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import 'base-styles';
+
+.header {
+  padding: $spacing-l 0;
+
+  h1, h2 {
+    margin: $spacing-m 0;
+  }
+
+  h1 {
+    color: $color-scale-base-0;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: $color-scale-base-10;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  span {
+    background-color: $color-primary-darker;
+    padding: $spacing-xs $spacing-s;
+  }
+}

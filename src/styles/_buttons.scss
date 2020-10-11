@@ -1,0 +1,61 @@
+.app-button {
+  font-weight: 700;
+  font-size: 16px;
+  font-family: $font-default-regular;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 6px transparent;
+  text-align: center;
+  letter-spacing: 0.25px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--primary {
+    color: $color-scale-base-0;
+    background-color: $color-button-primary;
+    border-color: $color-button-primary-darker;
+    box-shadow: 0 6px $color-button-primary-pressed;
+
+    &:hover {
+      background-color: $color-button-primary-lighter;
+    }
+
+    &:active {
+      background-color: $color-button-primary-darker;
+      border-color: $color-button-primary;
+      box-shadow: 0 3px $color-button-primary-pressed;
+      transform: translateY(1.5px);
+    }
+  }
+
+  &--secondary {
+    color: $color-scale-base-0;
+    background-color: $color-secondary;
+    border-color: $color-secondary-darker;
+    box-shadow: 0 6px $color-scale-base-50;
+
+    &:hover {
+      background-color: $color-secondary-lighter;
+    }
+
+    &:active {
+      background-color: $color-secondary-darker;
+      border-color: $color-secondary;
+      box-shadow: 0 3px $color-scale-base-50;
+      transform: translateY(1.5px);
+    }
+  }
+
+  &--primary,
+  &--secondary {
+    &:disabled {
+      cursor: default;
+      color: $color-scale-base-5;
+      background-color: $color-scale-base-50;
+      box-shadow: 0 6px $color-scale-base-70;
+    }
+  }
+}

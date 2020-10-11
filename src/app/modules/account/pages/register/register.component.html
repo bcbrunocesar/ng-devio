@@ -1,0 +1,73 @@
+<div class="register">
+  <app-container>
+    <app-header
+      title="Cadastro"
+      subtitle="Crie sua conta"></app-header>
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="handleAddNewAccount()"
+      autocomplete="off"
+      novalidate>
+      <div class="register__alert"
+        *ngIf="errorsForm.length > 0">
+        <app-alert [alertModel]="alert"></app-alert>
+      </div>
+
+      <div class="register__form-group app-input-group">
+        <label for="email">E-mail</label>
+        <div class="register__form-input">
+          <input
+            id="email"
+            type="text"
+            placeholder="E-mail (requerido)"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': displayMessage.email }">
+
+          <small
+            *ngIf="displayMessage.email"
+            [innerHTML]="displayMessage.email"></small>
+        </div>
+      </div>
+
+      <div class="register__form-group app-input-group">
+        <label for="password">Senha</label>
+        <div class="register__form-input">
+          <input
+            id="password"
+            type="password"
+            placeholder="Senha (requerido)"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': displayMessage.password }">
+
+          <small
+            *ngIf="displayMessage.password"
+            [innerHTML]="displayMessage.password"></small>
+        </div>
+      </div>
+
+      <div class="register__form-group app-input-group">
+        <label for="confirmPassword">Confirmar senha</label>
+        <div class="register__form-input">
+          <input
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirmar senha (requerido)"
+            formControlName="confirmPassword"
+            [ngClass]="{ 'is-invalid': displayMessage.confirmPassword }">
+
+          <small
+            *ngIf="displayMessage.confirmPassword"
+            [innerHTML]="displayMessage.confirmPassword"></small>
+        </div>
+      </div>
+
+      <div class="register__form-group">
+        <button
+          class="app-button app-button--primary"
+          type="submit"
+          [disabled]="!registerForm.valid">Saiba mais</button>
+      </div>
+    </form>
+  </app-container>
+</div>

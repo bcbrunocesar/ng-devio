@@ -28,8 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles/_base-styles.scss",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                  "src/styles/"
+              ]
+          },
             "scripts": []
           },
           "configurations": {
@@ -123,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "front-end"
 }

@@ -1,0 +1,12 @@
+@import 'base-styles';
+
+.footer {
+
+  label {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-family: $font-default-bold;
+    text-transform: uppercase;
+  }
+}

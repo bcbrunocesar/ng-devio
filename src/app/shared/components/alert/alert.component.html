@@ -1,0 +1,8 @@
+<div [ngClass]="alertStyle">
+  <h3 class="alert__title">{{ alertModel.title }}</h3>
+  <ul class="alert__list">
+    <li
+      class="alert__message"
+      *ngFor="let message of alertModel.messages">{{ message }}</li>
+  </ul>
+</div>

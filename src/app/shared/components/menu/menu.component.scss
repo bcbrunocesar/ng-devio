@@ -1,0 +1,64 @@
+@import 'base-styles';
+
+.menu {
+  margin-top: $spacing-m;
+  background-color: $color-base;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-primary;
+  }
+
+  &__brand {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    background-color: $color-primary-darker;
+
+    a {
+      color: $color-scale-base-0;
+      margin: 0 auto;
+    }
+  }
+
+  &__primary,
+  &__secondary {
+    display: flex;
+    justify-content: flex-start;
+
+    li {
+      padding: $spacing-xl $spacing-m;
+      transition: 0.65s ease;
+
+      a {
+        display: block;
+        color: $color-scale-base-0;
+        font-family: $font-default-regular;
+      }
+    }
+
+    li:hover {
+      background-color: $color-scale-base-90;
+    }
+  }
+
+  &__primary,
+  &__secondary {
+    ul {
+      display: flex;
+    }
+  }
+
+  &__primary {
+    ul {
+      background-color: $color-primary;
+    }
+  }
+
+  &__secondary {
+    ul {
+      background-color: $color-primary-lighter;
+    }
+  }
+}

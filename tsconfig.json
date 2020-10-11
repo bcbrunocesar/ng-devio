@@ -15,6 +15,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@services/*": ["src/app/core/services/*"],
+      "@mocks/*": ["src/app/shared/mocks/*"],
+      "@sharedModels/*": ["src/app/shared/models/*"],
+      "@sharedGuards/*": ["src/app/shared/guards/*"],
+      "@sharedComps/*": ["src/app/shared/components/*"],
+      "@core/*": ["src/app/core/*"],
+      "@moduleAccount/*": ["src/app/modules/account/*"],
+      "@moduleShared/*": ["src/app/shared/*"],
+      "@env/*": ["src/environments/*"],
+    }
   }
 }

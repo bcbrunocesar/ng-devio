@@ -1,0 +1,54 @@
+@import 'base-styles';
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: 0.7s ease;
+  background-color: $color-primary-darker;
+
+  &:hover {
+    background-color: $color-primary-lighter;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__header,
+  &__body,
+  &__footer {
+    padding: $spacing-s;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    h2,
+    label {
+      margin: 0 0 $spacing-xs;
+    }
+
+    h2 {
+      font-family: $font-default-bold;
+      color: $color-scale-base-30;
+    }
+
+    label {
+      font-family: $font-default-regular;
+      color: $color-scale-base-50;
+    }
+  }
+
+  &__footer {
+    display: block;
+    border-bottom: 2.5px solid $color-primary-lighter;
+
+    button {
+      margin-bottom: $spacing-s;
+    }
+  }
+}
