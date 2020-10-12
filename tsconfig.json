@@ -23,6 +23,7 @@
       "@sharedGuards/*": ["src/app/shared/guards/*"],
       "@sharedComps/*": ["src/app/shared/components/*"],
       "@core/*": ["src/app/core/*"],
+      "@custom/*": ["src/app/custom/*"],
       "@moduleAccount/*": ["src/app/modules/account/*"],
       "@moduleShared/*": ["src/app/shared/*"],
       "@env/*": ["src/environments/*"],

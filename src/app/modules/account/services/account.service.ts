@@ -5,6 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 
 import { BaseService } from '@services/base/base.service';
 import { UserModel } from '@moduleAccount/models/user.model';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AccountService extends BaseService {
 
   public registerUser(userModel: UserModel): Observable<UserModel> {
     let response = this.httpClient
-      .post(`${this.urlServiceV1 }/nova-conta`, userModel, this.GetHeaderJson())
+      .post(environment.api.accountRegister, userModel, this.GetHeaderJson())
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)

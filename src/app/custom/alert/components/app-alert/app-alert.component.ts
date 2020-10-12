@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { AlertModel } from '@sharedModels/alert.model';
+import { AlertModel } from 'src/app/custom/alert/models/alert.model';
 
 @Component({
   selector: 'app-alert',
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss']
+  templateUrl: './app-alert.component.html',
+  styleUrls: ['./app-alert.component.scss']
 })
-export class AlertComponent implements OnInit {
+export class AppAlertComponent implements OnInit {
 
   @Input() alertModel: AlertModel;
 

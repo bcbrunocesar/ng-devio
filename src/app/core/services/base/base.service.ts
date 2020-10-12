@@ -1,12 +1,10 @@
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError } from 'rxjs';
 
-import { UserTokenManagementService } from '@services/token-management/user-token-management.service';
+import { UserTokenManagementService } from '@services/user-token-management/user-token-management.service';
 
 export abstract class BaseService {
   public UserTokenManagement = new UserTokenManagementService();
-
-  protected urlServiceV1: string = 'https://localhost:44321/api/v1';
 
   protected GetHeaderJson() {
     return {

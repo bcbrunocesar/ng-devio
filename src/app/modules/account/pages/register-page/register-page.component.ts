@@ -4,21 +4,22 @@ import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
 import { fromEvent, merge, Observable } from 'rxjs';
 
-import { AlertModel } from '@sharedModels/alert.model';
+import { AlertModel } from '@custom/alert/models/alert.model';
+import { AlertTypeEnum } from '@custom/alert/models/alert-type.model';
+import { AuthorizationResponseModel } from '@sharedModels/authorization/authorization-response.model';
 import { DisplayMessageModel } from '@core/utils/validations/models/display-message.model';
 import { ValidationMessagesModel } from '@core/utils/validations/models/validation-messages.model';
 import { GenericValidator } from '@core/utils/validations/services/generic-form-validation/generic-form-validation';
 import { UserModel } from '@moduleAccount/models/user.model';
 import { AccountService } from '@moduleAccount/services/account.service';
 import { environment } from '@env/environment';
-import { AuthorizationResponseModel } from '@sharedModels/authorization/authorization-response.model';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-register-page',
+  templateUrl: './register-page.component.html',
+  styleUrls: ['./register-page.component.scss']
 })
-export class RegisterComponent implements OnInit, AfterViewInit {
+export class RegisterPageComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   public registerForm: FormGroup;
   public alert: AlertModel;
   public errorsForm: any[] = [];
+  public isFormChangesNotSaved: boolean;
 
   public validationMessages: ValidationMessagesModel;
   public displayMessage: DisplayMessageModel;
@@ -46,6 +48,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
     merge(...controlBlurs).subscribe(() => {
       this.displayMessage = this.genericValidator.processMessages(this.registerForm);
+      this.isFormChangesNotSaved = true;
     });
   }
 
@@ -64,6 +67,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     this.registerForm.reset();
     this.errorsForm = [];
 
+    this.isFormChangesNotSaved = false;
     this.accountService.UserTokenManagement.saveUserData(response as AuthorizationResponseModel);
     this.router.navigate([`${environment.urls.home}`]);
   }
@@ -71,8 +75,8 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   private handleFail(fail: any): void {
     this.errorsForm = fail.error.errors;
     this.alert = {
-      title: 'Alguma coisa não deu certo:',
-      type: 'danger',
+      title: 'Alguma coisa não deu certo',
+      type: AlertTypeEnum.danger,
       messages: this.errorsForm as string[]
     }
   }

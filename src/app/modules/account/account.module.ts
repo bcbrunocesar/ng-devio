@@ -6,17 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ngx-custom-validators';
 
 import { AccountAppComponent } from '@moduleAccount/account.app.component';
-import { RegisterComponent } from '@moduleAccount/pages/register/register.component';
-import { LoginComponent } from '@moduleAccount/pages/login/login.component';
+import { RegisterPageComponent } from '@moduleAccount/pages/register-page/register-page.component';
+import { LoginPageComponent } from '@moduleAccount/pages/login-page/login-page.component';
 import { AccountRoutingModule } from '@moduleAccount/account.routing.module';
 import { AccountService } from '@moduleAccount/services/account.service';
+import { RegisterAccountGuard } from '@moduleAccount/guards/register-account/register-account.guard';
 import { SharedModule } from '@moduleShared/shared.module';
 
 @NgModule({
   declarations: [
     AccountAppComponent,
-    RegisterComponent,
-    LoginComponent
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     HttpClientModule,
@@ -28,6 +29,9 @@ import { SharedModule } from '@moduleShared/shared.module';
     CustomFormsModule,
     SharedModule
   ],
-  providers: [AccountService]
+  providers: [
+    AccountService,
+    RegisterAccountGuard
+  ]
 })
 export class AccountModule { }

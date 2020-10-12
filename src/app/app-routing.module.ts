@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NotFoundComponent } from '@sharedComps/not-found/not-found.component';
-import { HomeComponent } from '@moduleShared/pages/home/home.component';
+import { HomePageComponent } from '@moduleShared/pages/home-page/home-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomePageComponent },
   {
     path: 'account',
     loadChildren: () => import('./modules/account/account.module')

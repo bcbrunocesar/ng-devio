@@ -3,20 +3,17 @@
     <nav class="menu__nav">
       <div class="menu__primary">
         <div class="menu__brand">
-          <a [routerLink]="['/']">DEV.IO</a>
+          <a [routerLink]="['/home']">DEV.IO</a>
         </div>
 
         <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="">Fornecedores</a></li>
-          <li><a href="">Produtos</a></li>
+          <li><a>Início</a></li>
+          <li><a>Fornecedores</a></li>
+          <li><a>Produtos</a></li>
         </ul>
       </div>
       <div class="menu__secondary">
-        <ul>
-          <li><a [routerLink]="['/account/login']">Entrar</a></li>
-          <li><a [routerLink]="['/account/register']">Crie sua conta</a></li>
-        </ul>
+        <app-menu-auth></app-menu-auth>
       </div>
     </nav>
   </app-container>

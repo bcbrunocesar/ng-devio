@@ -1,0 +1,16 @@
+<ul class="menu-auth" [ngSwitch]="userIsAuthenticated()">
+  <li *ngSwitchCase="false">
+    <a [routerLink]="['/account/login']">Entrar</a>
+  </li>
+  <li *ngSwitchCase="false">
+    <a [routerLink]="['/account/register']">Crie sua conta</a>
+  </li>
+
+  <li *ngSwitchCase="true">
+    <a href="javascript:void(0)">{{ email }}</a>
+  </li>
+  <li *ngSwitchCase="true">
+    <a href="javascript:void(0)"
+      (click)="logout()">Sair</a>
+  </li>
+</ul>

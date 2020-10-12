@@ -22,10 +22,14 @@
     }
   }
 
-  &__primary,
-  &__secondary {
+  &__primary {
     display: flex;
     justify-content: flex-start;
+
+    ul {
+      display: flex;
+      background-color: $color-primary;
+    }
 
     li {
       padding: $spacing-xl $spacing-m;
@@ -40,25 +44,6 @@
 
     li:hover {
       background-color: $color-scale-base-90;
-    }
-  }
-
-  &__primary,
-  &__secondary {
-    ul {
-      display: flex;
-    }
-  }
-
-  &__primary {
-    ul {
-      background-color: $color-primary;
-    }
-  }
-
-  &__secondary {
-    ul {
-      background-color: $color-primary-lighter;
     }
   }
 }

@@ -11,8 +11,8 @@ export class UserTokenManagementService {
     return localStorage.getItem('devio.user');
   }
 
-  public getUserToken(): string {
-    return localStorage.getItem('devio.token');
+  public getUserToken(): UserToken {
+    return JSON.parse(localStorage.getItem('devio.token'));
   }
 
   public saveUserToken(userToken: UserToken): void {
